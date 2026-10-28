@@ -1,0 +1,6 @@
+artifacts/*.joblib
+
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
