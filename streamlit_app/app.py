@@ -6,9 +6,17 @@ import joblib
 
 st.title("Movie Recommendation System")
 
-movies=joblib.load("artifacts/processed_data.joblib")
+#movies=joblib.load("artifacts/processed_data.joblib")
 
-similarity = joblib.load("artifacts/similarity.joblib")
+#similarity = joblib.load("artifacts/similarity.joblib")
+
+@st.cache_resource
+def load_data():
+    movies = joblib.load("artifacts/processed_data.joblib")
+    similarity = joblib.load("artifacts/similarity.joblib")
+    return movies, similarity
+
+movies, similarity = load_data()
 
 movies_names = movies["title"].values
 name_movie= st.selectbox("Enter the Movie Name", movies_names)
