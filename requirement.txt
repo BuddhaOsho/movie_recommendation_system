@@ -1,4 +1,7 @@
 streamlit
-nltk
 pandas
+numpy
 scikit-learn
+nltk
+joblib
+requests
