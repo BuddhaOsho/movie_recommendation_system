@@ -6,9 +6,6 @@ import joblib
 
 st.title("Movie Recommendation System")
 
-#movies=joblib.load("artifacts/processed_data.joblib")
-
-#similarity = joblib.load("artifacts/similarity.joblib")
 
 @st.cache_resource
 def load_data():
@@ -45,20 +42,6 @@ def recommend(name_movie):
     except Exception as e:
         st.error(f"Error: {e}")
         return []
-
-"""def recommend(name_movie):
-
-    movie_index= movies[movies["title"]== name_movie].index[0]
-
-    recommendations = similarity[movie_index]
-
-    movie_list= sorted(enumerate(recommendations),reverse=True, key=lambda x: x[1])[1:6]
-    
-    recommended_movies=[]
-    for i in movie_list:
-        recommended_movies.append(movies.iloc[i[0]].title)
-
-    return recommended_movies"""
 
 
 
